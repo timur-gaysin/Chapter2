@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var message = "Velocity in meters per second "
-    let velocity = 20.0
+    let velocity : Float = 20
     var body: some View {
         VStack {
             Text(message+"\(velocity)")
@@ -18,10 +18,12 @@ struct ContentView: View {
         .padding()
     }
     
-    func velocityToKilometerPerHour(velocityMpS: Double) -> Double {
-        var velocityKpH: Double
+    func velocityToKilometerPerHour(velocityMpS: Float) -> String {
+        print(velocityMpS)
+        var velocityKpH: Float
         velocityKpH = velocityMpS * 3.6
-        return velocityKpH
+        return String(format: "%.2f", velocityKpH)
+//        return velocityKpH
     }
 }
 
